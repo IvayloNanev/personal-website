@@ -1,422 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Ethan Nanev | Software Engineer, Classical Musician & AI Builder</title>
-  <meta name="description" content="Portfolio of Dr. Ethan Nanev, a former concert pianist and researcher transitioning to full-stack software engineering. Combining musical discipline with technical innovation.">
-  
-  <!-- SEO Open Graph -->
-  <meta property="og:title" content="Dr. Ethan Nanev | Portfolio">
-  <meta property="og:description" content="Former concert pianist and researcher transitioning to full-stack software engineering. Combining musical discipline with technical innovation.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="images/hero-bg.jpg">
-  
-  <!-- Fonts -->
+  <meta name="theme-color" content="#17110c">
+  <meta name="description" content="A vintage dashboard-inspired unit converter.">
+  <title>Grand Tour Unit Converter</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Oswald:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
-  <!-- Navigation Header -->
-  <header id="main-header" class="site-header">
-    <div class="header-container">
-      <div class="logo">
-        <a href="#" id="logo-link">ETHAN NANEV</a>
-      </div>
-      <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigationMenu">
-        <span class="hamburger"></span>
-      </button>
-      <nav id="primary-navigation" class="nav-menu">
-        <ul class="nav-list">
-          <li><a href="#about" class="nav-link">ABOUT</a></li>
-          <li><a href="#story" class="nav-link">STORY</a></li>
-          <li><a href="#what-i-bring" class="nav-link">BENEFITS</a></li>
-          <li><a href="#projects" class="nav-link">PROJECTS</a></li>
-          <li><a href="#skills" class="nav-link">SKILLS</a></li>
-          <li><a href="#contact" class="nav-link">CONTACT</a></li>
-          <li><a href="#" class="btn btn-resume">DOWNLOAD RESUME</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero Section -->
-    <section id="about" class="hero-section">
-      <div class="hero-bg-overlay"></div>
-      <div class="hero-content">
-        <h1 class="hero-title">Dr. Ethan Nanev</h1>
-        <p class="hero-subtitle">SOFTWARE ENGINEER <span class="sep">|</span> CLASSICAL MUSICIAN <span class="sep">|</span> AI BUILDER</p>
-        
-        <div class="hero-statement">
-          <p class="highlight-text">Building technology with the discipline of a musician and the curiosity of a researcher.</p>
-          <p class="bio-text">I'm a former concert pianist, researcher, and educator transitioning into software engineering. My background in music has shaped the way I solve problems—analytical, disciplined, and user-centered.</p>
+  <main class="dashboard-shell">
+    <section class="converter" aria-labelledby="page-title">
+      <header class="hero-panel">
+        <div class="gauge" aria-hidden="true">
+          <span class="gauge-number n1">0</span><span class="gauge-number n2">50</span>
+          <span class="gauge-number n3">100</span><span class="gauge-number n4">150</span>
+          <span class="needle"></span><span class="hub"></span>
         </div>
-        
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">VIEW PROJECTS</a>
-          <a href="#contact" class="btn btn-outline">CONTACT ME</a>
+        <div class="hero-copy">
+          <div class="crest" aria-hidden="true"><span>GT</span></div>
+          <p class="eyebrow">The Grand Tour</p>
+          <h1 id="page-title">Unit Converter</h1>
+          <p id="route-label" class="route-label">Kilometers <span aria-hidden="true">◆</span> Miles</p>
         </div>
-      </div>
-      <div class="scroll-indicator">
-        <a href="#story" aria-label="Scroll to My Story">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-    </section>
+        <div class="gauge gauge-right" aria-hidden="true">
+          <span class="gauge-number n1">0</span><span class="gauge-number n2">40</span>
+          <span class="gauge-number n3">80</span><span class="gauge-number n4">120</span>
+          <span class="needle"></span><span class="hub"></span>
+        </div>
+      </header>
 
-    <!-- My Story Section -->
-    <section id="story" class="story-section scroll-reveal">
-      <div class="section-container">
-        <h2 class="section-title">MY STORY</h2>
-        
-        <div class="timeline">
-          <div class="timeline-line"></div>
-          
-          <div class="timeline-items">
-            <!-- Timeline Item 1 -->
-            <div class="timeline-item">
-              <div class="timeline-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 18V5l12-2v13"></path>
-                  <circle cx="6" cy="18" r="3"></circle>
-                  <circle cx="18" cy="16" r="3"></circle>
-                </svg>
-              </div>
-              <div class="timeline-content">
-                <h3 class="timeline-title">1. CLASSICAL MUSICIAN</h3>
-                <p class="timeline-desc">Studied piano from an early age and earned a doctorate, developing the discipline and persistence required to master complex skills.</p>
-              </div>
-            </div>
-            
-            <!-- Timeline Item 2 -->
-            <div class="timeline-item">
-              <div class="timeline-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                </svg>
-              </div>
-              <div class="timeline-content">
-                <h3 class="timeline-title">2. RESEARCHER & EDUCATOR</h3>
-                <p class="timeline-desc">Created a piano methodology and taught students for years, learning how to analyze problems, communicate ideas clearly, and continuously improve systems.</p>
-              </div>
-            </div>
-            
-            <!-- Timeline Item 3 -->
-            <div class="timeline-item">
-              <div class="timeline-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-              </div>
-              <div class="timeline-content">
-                <h3 class="timeline-title">3. SOFTWARE ENGINEER</h3>
-                <p class="timeline-desc">Currently training in full-stack software engineering and AI through Pursuit, applying my analytical background to modern technology.</p>
-              </div>
+      <div class="control-panel">
+        <div class="category-tabs" role="group" aria-label="Measurement category">
+          <button class="category active" data-category="distance" type="button">Distance</button>
+          <button class="category" data-category="temperature" type="button">Temperature</button>
+          <button class="category" data-category="weight" type="button">Weight</button>
+        </div>
+
+        <div class="field-group">
+          <label for="from-value">From</label>
+          <div class="field-row">
+            <input id="from-value" inputmode="decimal" type="number" step="any" aria-describedby="conversion-note">
+            <div class="select-wrap">
+              <select id="from-unit" aria-label="Convert from unit"></select>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- What I Bring Section -->
-    <section id="what-i-bring" class="what-i-bring-section scroll-reveal">
-      <div class="section-container">
-        <h2 class="section-title">WHAT I BRING</h2>
-        
-        <div class="benefits-grid">
-          <!-- Benefit 1 -->
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <p class="benefit-text">I evaluate people's strengths to help build effective, collaborative teams.</p>
-          </div>
-          
-          <!-- Benefit 2 -->
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9.59 4.59A2 2 0 1 1 11 8H9m10.59 11.41A2 2 0 1 1 18 16h2m-9 2v-4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2zm12-8V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2z"></path>
-              </svg>
-            </div>
-            <p class="benefit-text">I connect ideas from music, research, and technology to approach problems from multiple perspectives.</p>
-          </div>
-          
-          <!-- Benefit 3 -->
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <circle cx="12" cy="12" r="6"></circle>
-                <circle cx="12" cy="12" r="2"></circle>
-              </svg>
-            </div>
-            <p class="benefit-text">I take ownership of long-term challenges, breaking complex problems into steps and refining solutions until they are effective.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <button id="swap-button" class="swap-button" type="button" aria-label="Swap units">
+          <span aria-hidden="true">⇅</span>
+        </button>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section scroll-reveal">
-      <div class="section-container">
-        <h2 class="section-title">PROJECTS</h2>
-        
-        <div class="projects-grid">
-          <!-- Project 1 -->
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="images/task-manager.jpg" alt="Task Manager Dashboard Interface Mockup" class="project-image" loading="lazy">
+        <div class="field-group">
+          <label for="to-value">To</label>
+          <div class="field-row">
+            <output id="to-value" aria-live="polite"></output>
+            <div class="select-wrap">
+              <select id="to-unit" aria-label="Convert to unit"></select>
             </div>
-            <div class="project-info">
-              <h3 class="project-title">Task Manager App</h3>
-              <p class="project-desc">A full-stack task management app with user authentication and CRUD functionality.</p>
-              <div class="project-tech">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">MongoDB</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link" aria-label="View Task Manager App GitHub repository">GitHub <span class="arrow">↗</span></a>
-                <a href="#" class="project-link" aria-label="View Task Manager App live demo">Live Demo <span class="arrow">↗</span></a>
-              </div>
-            </div>
-          </article>
-          
-          <!-- Project 2 -->
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="images/recipe-finder.jpg" alt="Recipe Finder Search Interface Mockup" class="project-image" loading="lazy">
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Recipe Finder</h3>
-              <p class="project-desc">Search and save recipes using a public API with a responsive interface.</p>
-              <div class="project-tech">
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">HTML</span>
-                <span class="tech-tag">CSS</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link" aria-label="View Recipe Finder GitHub repository">GitHub <span class="arrow">↗</span></a>
-                <a href="#" class="project-link" aria-label="View Recipe Finder live demo">Live Demo <span class="arrow">↗</span></a>
-              </div>
-            </div>
-          </article>
-          
-          <!-- Project 3 -->
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="images/ai-chatbot.jpg" alt="AI Chatbot Application Conversation Mockup" class="project-image" loading="lazy">
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">AI Chatbot</h3>
-              <p class="project-desc">An AI-powered chatbot built with OpenAI API and conversation memory.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Flask</span>
-                <span class="tech-tag">OpenAI API</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link" aria-label="View AI Chatbot GitHub repository">GitHub <span class="arrow">↗</span></a>
-                <a href="#" class="project-link" aria-label="View AI Chatbot live demo">Live Demo <span class="arrow">↗</span></a>
-              </div>
-            </div>
-          </article>
-          
-          <!-- Project 4 -->
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="images/piano-tracker.jpg" alt="Piano Practice Tracker Chart Dashboard Mockup" class="project-image" loading="lazy">
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Piano Practice Tracker</h3>
-              <p class="project-desc">Track practice sessions and progress over time.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">SQLite</span>
-                <span class="tech-tag">Streamlit</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link" aria-label="View Piano Practice Tracker GitHub repository">GitHub <span class="arrow">↗</span></a>
-                <a href="#" class="project-link" aria-label="View Piano Practice Tracker live demo">Live Demo <span class="arrow">↗</span></a>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
-        
-        <div class="projects-cta">
-          <a href="#" class="btn btn-github">VIEW ALL PROJECTS ON GITHUB</a>
-        </div>
-      </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section scroll-reveal">
-      <div class="section-container">
-        <h2 class="section-title">SKILLS</h2>
-        
-        <div class="skills-wrapper">
-          <!-- Languages Category -->
-          <div class="skills-category">
-            <h3 class="category-title">LANGUAGES</h3>
-            <div class="skills-grid">
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- HTML5 SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 2L4.85 20.35L12 22L19.15 20.35L21 2M17.85 6.7H6.15L6.5 10.3H17.5M6.85 13.9H13.65L13.3 17.5L12 17.9L10.7 17.5L10.6 16.5H7.05L7.25 19.3L12 20.6L16.75 19.3L17.25 13.9H6.85" fill="#E34F26"/>
-                  </svg>
-                </div>
-                <span class="skill-name">HTML</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- CSS3 SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 2L4.85 20.35L12 22L19.15 20.35L21 2M17.85 6.7H6.15L6.5 10.3H17.5M17.15 13.9H9.45L9.65 16.5L12 17.1L14.35 16.5L14.6 13.9H17.15L16.75 19.3L12 20.6L7.25 19.3L6.85 13.9H17.15" fill="#1572B6"/>
-                  </svg>
-                </div>
-                <span class="skill-name">CSS</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- JS SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="24" height="24" fill="#F7DF1E"/>
-                    <path d="M19.78 16.38C19.78 18.23 18.28 19.46 16.43 19.46C14.77 19.46 13.7 18.52 13.15 17.43L14.86 16.42C15.22 17.14 15.77 17.76 16.43 17.76C17.19 17.76 17.77 17.3 17.77 16.42C17.77 15.63 17.19 15.17 16.03 14.67L15.18 14.32C13.56 13.62 12.63 12.62 12.63 10.87C12.63 9.12 14.07 8.04 15.82 8.04C17.29 8.04 18.22 8.79 18.77 9.87L17.06 10.88C16.77 10.3 16.32 9.74 15.82 9.74C15.16 9.74 14.63 10.15 14.63 10.87C14.63 11.53 15.11 11.91 16.12 12.33L16.97 12.69C18.89 13.51 19.78 14.51 19.78 16.38ZM11.16 8.24V17.76C11.16 18.83 10.42 19.46 9.35 19.46C8.28 19.46 7.54 18.83 7.54 17.76V14.15H9.35V17.76C9.35 17.82 9.35 17.82 9.35 17.82H9.36C9.36 17.82 9.36 17.82 9.36 17.76V8.24H11.16Z" fill="#000000"/>
-                  </svg>
-                </div>
-                <span class="skill-name">JavaScript</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- Python SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 6 2.5 6 5.5V7.5H12V8.5H5C2.5 8.5 2 9 2 12C2 15 2.5 15.5 5.5 15.5H7.5V12C7.5 9.24 9.24 7.5 12 7.5H14V5.5C14 2.5 13.52 2 12 2ZM18.5 8.5H16.5V12C16.5 14.76 14.76 16.5 12 16.5H10V18.5C10 21.5 10.48 22 12 22C17.52 22 18 21.5 18 18.5V16.5H12V15.5H19C21.5 15.5 22 15 22 12C22 9 21.5 8.5 18.5 8.5Z" fill="#3776AB"/>
-                  </svg>
-                </div>
-                <span class="skill-name">Python</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="skills-divider"></div>
-          
-          <!-- Tools & Technologies Category -->
-          <div class="skills-category">
-            <h3 class="category-title">TOOLS & TECHNOLOGIES</h3>
-            <div class="skills-grid">
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- Git SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21.6 11.4L12.6 2.4C12.2 2 11.6 2 11.2 2.4L9.8 3.8L12.1 6.1C12.7 5.9 13.4 6.1 13.8 6.5C14.3 7 14.4 7.7 14.2 8.3L16.5 10.6C17.1 10.4 17.8 10.5 18.2 11C18.7 11.5 18.7 12.3 18.2 12.8C17.7 13.3 16.9 13.3 16.4 12.8C16 12.4 15.9 11.8 16.1 11.2L13.8 8.9V15C14 15.2 14.2 15.5 14.2 15.8C14.2 16.5 13.6 17.1 12.9 17.1C12.2 17.1 11.6 16.5 11.6 15.8C11.6 15.4 11.8 15.1 12.1 14.9V8.9L9.8 6.6C9.2 6.8 8.5 6.7 8.1 6.3C7.6 5.8 7.5 5 7.7 4.4L3.8 8.3C3.4 8.7 3.4 9.3 3.8 9.7L12.8 18.7C13.2 19.1 13.8 19.1 14.2 18.7L21.6 11.3C22 10.9 22 10.3 21.6 9.9V11.4Z" fill="#F05032"/>
-                  </svg>
-                </div>
-                <span class="skill-name">Git</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- GitHub SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.477 2 2 6.477 2 12C2 16.42 4.867 20.17 8.83 21.5C9.33 21.58 9.5 21.27 9.5 21V19.31C6.73 19.91 6.14 17.98 6.14 17.98C5.69 16.84 5.03 16.54 5.03 16.54C4.13 15.92 5.1 15.93 5.1 15.93C6.1 16 6.62 16.96 6.62 16.96C7.5 18.47 8.94 18.03 9.5 17.78C9.59 17.14 9.85 16.71 10.13 16.46C7.91 16.21 5.58 15.35 5.58 11.52C5.58 10.43 5.97 9.54 6.61 8.84C6.51 8.59 6.17 7.57 6.71 6.19C6.71 6.19 7.55 5.92 9.46 7.21C10.26 6.99 11.12 6.88 11.98 6.88C12.84 6.88 13.7 6.99 14.5 7.21C16.41 5.92 17.25 6.19 17.25 6.19C17.79 7.57 17.45 8.59 17.35 8.84C17.99 9.54 18.38 10.43 18.38 11.52C18.38 15.36 16.04 16.21 13.81 16.46C14.17 16.77 14.49 17.39 14.49 18.35V21C14.49 21.27 14.66 21.59 15.17 21.5C19.14 20.16 22 16.42 22 12C22 6.477 17.522 2 12 2Z" fill="#FFFFFF"/>
-                  </svg>
-                </div>
-                <span class="skill-name">GitHub</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- VS Code SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23.9 6.5L18.4 1.1C18.2 0.9 17.8 0.9 17.6 1.1L9.1 8.6L4.3 5L0.8 6.7C0.3 6.9 0 7.4 0 8V16C0 16.6 0.3 17.1 0.8 17.3L4.3 19L9.1 15.4L17.6 22.9C17.8 23.1 18.2 23.1 18.4 22.9L23.9 17.5C24.1 17.3 24.1 16.9 23.9 16.7L18.7 12L23.9 7.3C24.1 7.1 24.1 6.7 23.9 6.5ZM17.4 16.7L12.5 12L17.4 7.3V16.7Z" fill="#007ACC"/>
-                  </svg>
-                </div>
-                <span class="skill-name">VS Code</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- OpenAI / ChatGPT SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21.7 10.7C22.1 10.2 22.1 9.4 21.6 9C20.6 8.3 19.3 8.3 18.3 9C18 7.3 17.1 5.9 15.7 5C14.3 4.1 12.6 4.1 11.2 5C10.7 3.5 9.4 2.5 7.8 2.5C5.9 2.5 4.3 4.1 4.3 6V6.5C3.1 6.8 2 7.7 1.5 9C0.9 10.3 1.1 11.8 2 12.8C1.6 13.3 1.6 14.1 2.1 14.5C3.1 15.2 4.4 15.2 5.4 14.5C5.7 16.2 6.6 17.6 8 18.5C9.4 19.4 11.1 19.4 12.5 18.5C13 20 14.3 21 15.9 21C17.8 21 19.4 19.4 19.4 17.5V17C20.6 16.7 21.7 15.8 22.2 14.5C22.8 13.2 22.6 11.7 21.7 10.7ZM15.9 19.5C14.8 19.5 13.9 18.8 13.5 17.8C13.8 17.6 14.1 17.3 14.3 17L16.5 15.7C17.2 15.3 17.6 14.6 17.6 13.8V10.8L19.4 9.8C20.1 10.5 20.2 11.6 19.8 12.5L19.4 13.2C19.2 13.5 19.2 14 19.4 14.3C19.9 15.1 19.9 16 19.4 16.7L18.1 17.4C17.6 18.8 16.7 19.5 15.9 19.5ZM4.6 6C4.6 5.2 5.2 4.6 6 4.6C6.7 4.6 7.4 5 7.7 5.7C7.4 5.9 7.1 6.2 6.9 6.5L4.7 7.8C4 8.2 3.6 8.9 3.6 9.7V12.7L2.1 11.8C1.5 11.1 1.4 10 1.8 9.1L2.2 8.4C2.4 8.1 2.4 7.6 2.2 7.3C1.7 6.5 1.7 5.6 2.2 4.9L3.5 4.2C4.1 5.3 4.6 6 4.6 6ZM7.2 16.2C6.5 15.8 6.1 15.1 6.1 14.3V11.3L4.3 10.3C3.6 9.6 3.5 8.5 3.9 7.6L4.3 6.9C4.5 6.6 4.5 6.1 4.3 5.8C3.8 5 3.8 4.1 4.3 3.4L5.6 2.7C6.1 4.1 7.2 16.2 7.2 16.2ZM12 12.8L9.8 14.1V11.5L12 10.2V12.8ZM16.3 12.5L12 15L9.8 13.7V8.7L14.1 6.2L16.3 7.5V12.5Z" fill="#10A37F"/>
-                  </svg>
-                </div>
-                <span class="skill-name">AI Tools</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <button id="convert-button" class="convert-button" type="button">
+          <span aria-hidden="true"></span>Convert<span aria-hidden="true"></span>
+        </button>
 
-    <!-- Let's Connect / Footer Section -->
-    <section id="contact" class="contact-section scroll-reveal">
-      <div class="section-container contact-wrapper">
-        <div class="contact-left">
-          <h2 class="contact-heading">LET'S CONNECT</h2>
-          <p class="contact-text">I'm always open to discussing new opportunities, interesting projects, or ways to collaborate.</p>
-          
-          <ul class="contact-links-list">
-            <li>
-              <a href="mailto:ethan.nanev@example.com" class="contact-link-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                <span>ethan.nanev@example.com</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/in/ethannanev" target="_blank" rel="noopener noreferrer" class="contact-link-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                  <rect x="2" y="9" width="4" height="12"></rect>
-                  <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-                <span>linkedin.com/in/ethannanev</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/ethannanev" target="_blank" rel="noopener noreferrer" class="contact-link-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-                <span>github.com/ethannanev</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="contact-right">
-          <div class="profile-image-container">
-            <img src="images/profile-piano.jpg" alt="Dr. Ethan Nanev playing grand piano in a suit" class="profile-image" loading="lazy">
-          </div>
-        </div>
+        <section class="result-card is-empty" aria-labelledby="result-title">
+          <h2 id="result-title">Result</h2>
+          <p id="result-from"></p>
+          <div class="equals" aria-hidden="true">=</div>
+          <strong id="result-to"></strong>
+          <div class="ornament" aria-hidden="true">— ❧ —</div>
+        </section>
+
+        <p id="conversion-note" class="conversion-note">ⓘ&nbsp; 1 kilometer = 0.621371 miles</p>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="footer-container">
-      <p>&copy; 2026 Ethan Nanev. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- JS -->
   <script src="index.js"></script>
 </body>
 </html>
