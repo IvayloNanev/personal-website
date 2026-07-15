@@ -15,29 +15,46 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="images/coffee-ai-editorial-v1.webp?v=2" fetchpriority="high">
+  <link rel="preload" as="image" href="images/cinematic-portfolio-editorial-v1.webp?v=2">
+  <link rel="preload" as="image" href="images/vintage-converter-editorial-v1.webp?v=2">
   
   <!-- CSS -->
   <link rel="stylesheet" href="index.css?v=hero-v16">
 </head>
 <body>
+  <div class="exposure-adaptation" aria-hidden="true"></div>
+  <div class="projector-dust dust-near" aria-hidden="true"></div>
 
   <!-- Navigation Header -->
   <header id="main-header" class="site-header">
     <div class="header-container">
+      <a href="#about" class="sidebar-brand" aria-label="Ethan Nanev, back to opening">
+        <span class="sidebar-monogram">EN</span>
+        <span class="sidebar-name">Ethan Nanev</span>
+      </a>
+      <div class="sidebar-divider" aria-hidden="true"></div>
+      <div class="sidebar-now"><span>Now viewing</span><strong id="sidebar-section">Opening</strong></div>
       <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu">
         <span class="hamburger"></span>
       </button>
       <nav id="primary-navigation" class="nav-menu">
         <ul class="nav-list">
-          <li><a href="#about" class="nav-link">ABOUT</a></li>
-          <li><a href="#story" class="nav-link">STORY</a></li>
-          <li><a href="#what-i-bring" class="nav-link">BENEFITS</a></li>
-          <li><a href="#projects" class="nav-link">PROJECTS</a></li>
-          <li><a href="#skills" class="nav-link">SKILLS</a></li>
-          <li><a href="#contact" class="nav-link">CONTACT</a></li>
-          <li><a href="#" class="btn btn-resume">DOWNLOAD RESUME</a></li>
+          <li><a href="#about" class="nav-link" data-index="01">Opening</a></li>
+          <li><a href="#builder" class="nav-link" data-index="02">The Builder</a></li>
+          <li><a href="#what-i-bring" class="nav-link" data-index="03">What I Bring</a></li>
+          <li><a href="#projects" class="nav-link" data-index="04">Selected Work</a></li>
+          <li><a href="#process" class="nav-link" data-index="05">My Process</a></li>
+          <li><a href="#skills" class="nav-link" data-index="06">Capabilities</a></li>
+          <li><a href="#contact" class="nav-link" data-index="07">Contact</a></li>
         </ul>
       </nav>
+      <div class="sidebar-progress" aria-hidden="true"><span></span></div>
+      <div class="sidebar-socials">
+        <a href="https://github.com/ethannanev" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/ethannanev" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:ethannanev@gmail.com">Email</a>
+      </div>
     </div>
   </header>
 
@@ -47,368 +64,306 @@
       <div class="hero-content">
         <div class="hero-copy">
           <div class="hero-heading-group">
+            <p class="editorial-label">Opening · 2026</p>
             <p class="hero-kicker">Ethan Nanev</p>
             <h1 class="hero-title">
-              <span>Builder.</span>
-              <span>Engineer.</span>
-              <span>Designer.</span>
+              <span>Every great product</span>
+              <span>starts with an idea.</span>
+              <span>I build the rest.</span>
             </h1>
           </div>
 
-          <p class="bio-text">I build elegant digital products that simplify complexity.</p>
-
           <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">View Work</a>
-            <a href="#contact" class="btn btn-outline">Let's Talk</a>
+            <a href="#projects" class="btn btn-primary">Explore My Work</a>
+            <a href="#contact" class="btn btn-outline">Let's Connect</a>
           </div>
         </div>
       </div>
-      <div class="hero-portrait" aria-hidden="true">
-        <img src="images/profile-piano.jpg" alt="" fetchpriority="high">
-      </div>
     </section>
 
-    <!-- My Story Section -->
-    <section id="story" class="story-section scroll-reveal">
-      <div class="section-container">
-        <h2 class="section-title">MY STORY</h2>
-        
-        <div class="timeline">
-          <div class="timeline-line"></div>
-          
-          <div class="timeline-items">
-            <!-- Timeline Item 1 -->
-            <div class="timeline-item">
-              <div class="timeline-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 18V5l12-2v13"></path>
-                  <circle cx="6" cy="18" r="3"></circle>
-                  <circle cx="18" cy="16" r="3"></circle>
-                </svg>
-              </div>
-              <div class="timeline-content">
-                <h3 class="timeline-title">1. CLASSICAL MUSICIAN</h3>
-                <p class="timeline-desc">Studied piano from an early age and earned a doctorate, developing the discipline and persistence required to master complex skills.</p>
-              </div>
-            </div>
-            
-            <!-- Timeline Item 2 -->
-            <div class="timeline-item">
-              <div class="timeline-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                </svg>
-              </div>
-              <div class="timeline-content">
-                <h3 class="timeline-title">2. RESEARCHER & EDUCATOR</h3>
-                <p class="timeline-desc">Created a piano methodology and taught students for years, learning how to analyze problems, communicate ideas clearly, and continuously improve systems.</p>
-              </div>
-            </div>
-            
-            <!-- Timeline Item 3 -->
-            <div class="timeline-item">
-              <div class="timeline-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-              </div>
-              <div class="timeline-content">
-                <h3 class="timeline-title">3. SOFTWARE ENGINEER</h3>
-                <p class="timeline-desc">Currently training in full-stack software engineering and AI through Pursuit, applying my analytical background to modern technology.</p>
-              </div>
-            </div>
-          </div>
+    <!-- The Builder Section -->
+    <section id="builder" class="builder-section">
+      <div class="builder-container">
+        <div class="builder-intro">
+          <p class="editorial-label builder-reveal">Featured · 01</p>
+          <h2 class="builder-heading builder-reveal">The Builder</h2>
+          <p class="builder-copy builder-reveal">I build digital products where artificial intelligence, design, and engineering work together. Every interaction is intentional, every interface is crafted with precision, and every product is designed to create an experience people remember.</p>
+        </div>
+
+        <div class="builder-cards">
+          <article class="builder-card builder-reveal">
+            <span class="builder-card-number" aria-hidden="true">01</span>
+            <h3>AI</h3>
+            <p>Building intelligent products that solve real problems with thoughtful automation. I use AI to reduce friction, uncover possibilities, and make complex systems feel natural without losing the human judgment behind them.</p>
+          </article>
+
+          <article class="builder-card builder-reveal">
+            <span class="builder-card-number" aria-hidden="true">02</span>
+            <h3>Design</h3>
+            <p>Crafting elegant interfaces that feel effortless, immersive, and human. Every decision—from hierarchy and rhythm to motion and feedback—is shaped to guide attention and give each interaction a clear sense of purpose.</p>
+          </article>
+
+          <article class="builder-card builder-reveal">
+            <span class="builder-card-number" aria-hidden="true">03</span>
+            <h3>Product</h3>
+            <p>Turning ambitious ideas into polished experiences ready for the real world. I connect strategy, design, and engineering to move from early concept to a focused product that is useful, resilient, and ready to grow.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- What I Bring Section -->
-    <section id="what-i-bring" class="what-i-bring-section scroll-reveal">
-      <div class="section-container">
-        <h2 class="section-title">WHAT I BRING</h2>
-        
-        <div class="benefits-grid">
-          <!-- Benefit 1 -->
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
-            </div>
-            <p class="benefit-text">I evaluate people's strengths to help build effective, collaborative teams.</p>
-          </div>
-          
-          <!-- Benefit 2 -->
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9.59 4.59A2 2 0 1 1 11 8H9m10.59 11.41A2 2 0 1 1 18 16h2m-9 2v-4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2zm12-8V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2z"></path>
-              </svg>
-            </div>
-            <p class="benefit-text">I connect ideas from music, research, and technology to approach problems from multiple perspectives.</p>
-          </div>
-          
-          <!-- Benefit 3 -->
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <circle cx="12" cy="12" r="6"></circle>
-                <circle cx="12" cy="12" r="2"></circle>
-              </svg>
-            </div>
-            <p class="benefit-text">I take ownership of long-term challenges, breaking complex problems into steps and refining solutions until they are effective.</p>
-          </div>
+    <section id="what-i-bring" class="bring-section">
+      <div class="bring-container">
+        <header class="bring-intro">
+          <p class="editorial-label bring-reveal">Capability · 02</p>
+          <h2 class="bring-heading bring-reveal">What I Bring</h2>
+          <p class="bring-lead bring-reveal">I bring more than technical skills. I combine strategic thinking, design sensitivity, and engineering discipline to create products that are intuitive, impactful, and built to last.</p>
+        </header>
+
+        <div class="bring-grid">
+          <article class="bring-card bring-reveal">
+            <div class="bring-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"></circle><path d="M16 5v22M5 16h22M8.2 8.2l15.6 15.6"></path></svg></div>
+            <span class="bring-label">01 / Perspective</span>
+            <h3>Strategic Thinking</h3>
+            <p>Understanding problems before building solutions.</p>
+          </article>
+
+          <article class="bring-card bring-reveal">
+            <div class="bring-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 3l2.5 8.5L27 14l-8.5 2.5L16 25l-2.5-8.5L5 14l8.5-2.5L16 3z"></path><path d="M25 22l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z"></path></svg></div>
+            <span class="bring-label">02 / Intelligence</span>
+            <h3>AI-Native Development</h3>
+            <p>Using artificial intelligence to accelerate research, design, prototyping, and product development.</p>
+          </article>
+
+          <article class="bring-card bring-reveal">
+            <div class="bring-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M16 27s-10-5.4-10-14a5.5 5.5 0 0 1 10-3.2A5.5 5.5 0 0 1 26 13c0 8.6-10 14-10 14z"></path><circle cx="16" cy="15" r="3"></circle></svg></div>
+            <span class="bring-label">03 / Empathy</span>
+            <h3>Human-Centered Design</h3>
+            <p>Creating interfaces that feel intuitive, accessible, and emotionally engaging.</p>
+          </article>
+
+          <article class="bring-card bring-reveal">
+            <div class="bring-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7 8h18v16H7z"></path><path d="M11 12h10M11 16h10M11 20h6"></path><circle cx="25" cy="8" r="3"></circle></svg></div>
+            <span class="bring-label">04 / Craft</span>
+            <h3>Engineering Excellence</h3>
+            <p>Building reliable, scalable, and maintainable digital products.</p>
+          </article>
+
+          <article class="bring-card bring-reveal">
+            <div class="bring-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 7h15v11H10l-5 5V7z"></path><path d="M16 14h11v11h-5l-4 4v-4h-2"></path></svg></div>
+            <span class="bring-label">05 / Alignment</span>
+            <h3>Clear Communication</h3>
+            <p>Bridging technical ideas and business goals through thoughtful collaboration.</p>
+          </article>
+
+          <article class="bring-card bring-reveal">
+            <div class="bring-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M26 11a11 11 0 1 0 1 8"></path><path d="M26 4v7h-7"></path><path d="M16 10v7l4 3"></path></svg></div>
+            <span class="bring-label">06 / Growth</span>
+            <h3>Continuous Learning</h3>
+            <p>Adapting quickly, embracing new technologies, and constantly refining my craft.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section scroll-reveal">
-      <div class="section-container">
-        <h2 class="section-title">PROJECTS</h2>
-        
-        <div class="projects-grid">
-          <!-- Project 1 -->
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="images/task-manager.jpg" alt="Task Manager Dashboard Interface Mockup" class="project-image" loading="lazy">
+    <!-- Selected Work Section -->
+    <section id="projects" class="selected-work-section">
+      <div class="work-intro">
+        <p class="editorial-label work-reveal">Selected Work · 03</p>
+        <h2 class="work-heading work-reveal">Selected Work</h2>
+        <p class="work-lead work-reveal">Every project tells a story. These selected works reflect my journey into AI-native product development, combining thoughtful design, practical engineering, and a commitment to building meaningful digital experiences.</p>
+      </div>
+
+      <div class="work-carousel work-reveal" aria-roledescription="carousel" aria-label="Selected projects">
+        <div class="work-track" tabindex="0">
+          <article class="work-slide project-coffee is-active" aria-label="Project 1 of 3">
+            <div class="work-visual" style="--work-placeholder: linear-gradient(135deg, #1b1713, #493725 56%, #171411);">
+              <img class="project-image" src="images/coffee-ai-editorial-v1.webp?v=2" alt="Specialty coffee cup surrounded by subtle AI strategy and analytics displays" loading="eager" decoding="async" fetchpriority="high" width="1000" height="625">
             </div>
-            <div class="project-info">
-              <h3 class="project-title">Task Manager App</h3>
-              <p class="project-desc">A full-stack task management app with user authentication and CRUD functionality.</p>
-              <div class="project-tech">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">MongoDB</span>
+            <div class="work-content">
+              <span class="work-number">01 / 03</span>
+              <p class="work-category">AI Strategy • Product Thinking</p>
+              <h3>AI Strategy for Independent Coffee Shops</h3>
+              <p class="work-description">Developed an AI adoption strategy for an independent coffee shop by identifying operational challenges and proposing practical AI solutions to improve customer experience, streamline daily operations, and support long-term business growth.</p>
+              <div class="work-details">
+                <div><span>Technologies &amp; Skills</span><p>AI Strategy • Business Analysis • UX Thinking • Customer Experience</p></div>
+                <div><span>My Contributions</span><p>Business analysis • AI opportunity mapping • Customer journey improvements • Implementation roadmap</p></div>
               </div>
-              <div class="project-links">
-                <a href="#" class="project-link" aria-label="View Task Manager App GitHub repository">GitHub <span class="arrow">↗</span></a>
-                <a href="#" class="project-link" aria-label="View Task Manager App live demo">Live Demo <span class="arrow">↗</span></a>
-              </div>
-            </div>
-          </article>
-          
-          <!-- Project 2 -->
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="images/recipe-finder.jpg" alt="Recipe Finder Search Interface Mockup" class="project-image" loading="lazy">
-            </div>
-            <div class="project-info">
-              <h3 class="project-title">Recipe Finder</h3>
-              <p class="project-desc">Search and save recipes using a public API with a responsive interface.</p>
-              <div class="project-tech">
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">HTML</span>
-                <span class="tech-tag">CSS</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="project-link" aria-label="View Recipe Finder GitHub repository">GitHub <span class="arrow">↗</span></a>
-                <a href="#" class="project-link" aria-label="View Recipe Finder live demo">Live Demo <span class="arrow">↗</span></a>
-              </div>
+              <a href="#" class="work-button">View Case Study <span aria-hidden="true">↗</span></a>
             </div>
           </article>
-          
-          <!-- Project 3 -->
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="images/ai-chatbot.jpg" alt="AI Chatbot Application Conversation Mockup" class="project-image" loading="lazy">
+
+          <article class="work-slide project-portfolio" aria-label="Project 2 of 3" aria-hidden="true">
+            <div class="work-visual" style="--work-placeholder: linear-gradient(135deg, #141516, #353536 54%, #171511);">
+              <img class="project-image" src="images/cinematic-portfolio-editorial-v1.webp?v=2" alt="Cinematic developer portfolio presented on a dark studio laptop" loading="eager" decoding="async" width="1000" height="625">
             </div>
-            <div class="project-info">
-              <h3 class="project-title">AI Chatbot</h3>
-              <p class="project-desc">An AI-powered chatbot built with OpenAI API and conversation memory.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Flask</span>
-                <span class="tech-tag">OpenAI API</span>
+            <div class="work-content">
+              <span class="work-number">02 / 03</span>
+              <p class="work-category">UX/UI Design • Front-End Development</p>
+              <h3>Cinematic Portfolio</h3>
+              <p class="work-description">Designed and developed this cinematic developer portfolio inspired by luxury brands, editorial layouts, and immersive digital storytelling. The focus is on creating an elegant experience through thoughtful interaction, refined typography, and subtle motion.</p>
+              <div class="work-details">
+                <div><span>Technologies</span><p>Next.js • React • Tailwind CSS • GSAP</p></div>
+                <div><span>My Contributions</span><p>UI/UX design • Front-end development • Motion design • Responsive implementation</p></div>
               </div>
-              <div class="project-links">
-                <a href="#" class="project-link" aria-label="View AI Chatbot GitHub repository">GitHub <span class="arrow">↗</span></a>
-                <a href="#" class="project-link" aria-label="View AI Chatbot live demo">Live Demo <span class="arrow">↗</span></a>
-              </div>
+              <a href="#" class="work-button">View Case Study <span aria-hidden="true">↗</span></a>
             </div>
           </article>
-          
-          <!-- Project 4 -->
-          <article class="project-card">
-            <div class="project-image-container">
-              <img src="images/piano-tracker.jpg" alt="Piano Practice Tracker Chart Dashboard Mockup" class="project-image" loading="lazy">
+
+          <article class="work-slide project-converter" aria-label="Project 3 of 3" aria-hidden="true">
+            <div class="work-visual" style="--work-placeholder: linear-gradient(135deg, #171411, #4a3829 52%, #211a15);">
+              <img class="project-image" src="images/vintage-converter-editorial-v1.webp?v=2" alt="Vintage Unit Converter presented across laptop, tablet, and phone devices" loading="eager" decoding="async" width="1000" height="625">
             </div>
-            <div class="project-info">
-              <h3 class="project-title">Piano Practice Tracker</h3>
-              <p class="project-desc">Track practice sessions and progress over time.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">SQLite</span>
-                <span class="tech-tag">Streamlit</span>
+            <div class="work-content">
+              <span class="work-number">03 / 03</span>
+              <p class="work-category">Front-End Development</p>
+              <h3>Vintage Unit Converter</h3>
+              <p class="work-description">Designed and built a responsive web application that converts between kilometers and miles while transforming a simple utility into a polished user experience through custom visual design and interaction.</p>
+              <div class="work-details">
+                <div><span>Technologies</span><p>HTML • CSS • JavaScript</p></div>
+                <div><span>My Contributions</span><p>UI design • JavaScript logic • Responsive layout • User interaction design</p></div>
               </div>
-              <div class="project-links">
-                <a href="#" class="project-link" aria-label="View Piano Practice Tracker GitHub repository">GitHub <span class="arrow">↗</span></a>
-                <a href="#" class="project-link" aria-label="View Piano Practice Tracker live demo">Live Demo <span class="arrow">↗</span></a>
-              </div>
+              <a href="#" class="work-button">View Case Study <span aria-hidden="true">↗</span></a>
             </div>
           </article>
         </div>
-        
-        <div class="projects-cta">
-          <a href="#" class="btn btn-github">VIEW ALL PROJECTS ON GITHUB</a>
+
+        <div class="work-controls">
+          <span class="work-edge" aria-hidden="true">01</span>
+          <div class="work-progress" role="group" aria-label="Project progress">
+            <span class="is-active"></span><span></span><span></span>
+          </div>
+          <span class="work-edge" aria-hidden="true">03</span>
+          <p class="work-status" aria-live="polite">Project <span>01</span> / 03</p>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section scroll-reveal">
-      <div class="section-container">
-        <h2 class="section-title">SKILLS</h2>
-        
-        <div class="skills-wrapper">
-          <!-- Languages Category -->
-          <div class="skills-category">
-            <h3 class="category-title">LANGUAGES</h3>
-            <div class="skills-grid">
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- HTML5 SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 2L4.85 20.35L12 22L19.15 20.35L21 2M17.85 6.7H6.15L6.5 10.3H17.5M6.85 13.9H13.65L13.3 17.5L12 17.9L10.7 17.5L10.6 16.5H7.05L7.25 19.3L12 20.6L16.75 19.3L17.25 13.9H6.85" fill="#E34F26"/>
-                  </svg>
-                </div>
-                <span class="skill-name">HTML</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- CSS3 SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 2L4.85 20.35L12 22L19.15 20.35L21 2M17.85 6.7H6.15L6.5 10.3H17.5M17.15 13.9H9.45L9.65 16.5L12 17.1L14.35 16.5L14.6 13.9H17.15L16.75 19.3L12 20.6L7.25 19.3L6.85 13.9H17.15" fill="#1572B6"/>
-                  </svg>
-                </div>
-                <span class="skill-name">CSS</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- JS SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="24" height="24" fill="#F7DF1E"/>
-                    <path d="M19.78 16.38C19.78 18.23 18.28 19.46 16.43 19.46C14.77 19.46 13.7 18.52 13.15 17.43L14.86 16.42C15.22 17.14 15.77 17.76 16.43 17.76C17.19 17.76 17.77 17.3 17.77 16.42C17.77 15.63 17.19 15.17 16.03 14.67L15.18 14.32C13.56 13.62 12.63 12.62 12.63 10.87C12.63 9.12 14.07 8.04 15.82 8.04C17.29 8.04 18.22 8.79 18.77 9.87L17.06 10.88C16.77 10.3 16.32 9.74 15.82 9.74C15.16 9.74 14.63 10.15 14.63 10.87C14.63 11.53 15.11 11.91 16.12 12.33L16.97 12.69C18.89 13.51 19.78 14.51 19.78 16.38ZM11.16 8.24V17.76C11.16 18.83 10.42 19.46 9.35 19.46C8.28 19.46 7.54 18.83 7.54 17.76V14.15H9.35V17.76C9.35 17.82 9.35 17.82 9.35 17.82H9.36C9.36 17.82 9.36 17.82 9.36 17.76V8.24H11.16Z" fill="#000000"/>
-                  </svg>
-                </div>
-                <span class="skill-name">JavaScript</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- Python SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 6 2.5 6 5.5V7.5H12V8.5H5C2.5 8.5 2 9 2 12C2 15 2.5 15.5 5.5 15.5H7.5V12C7.5 9.24 9.24 7.5 12 7.5H14V5.5C14 2.5 13.52 2 12 2ZM18.5 8.5H16.5V12C16.5 14.76 14.76 16.5 12 16.5H10V18.5C10 21.5 10.48 22 12 22C17.52 22 18 21.5 18 18.5V16.5H12V15.5H19C21.5 15.5 22 15 22 12C22 9 21.5 8.5 18.5 8.5Z" fill="#3776AB"/>
-                  </svg>
-                </div>
-                <span class="skill-name">Python</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="skills-divider"></div>
-          
-          <!-- Tools & Technologies Category -->
-          <div class="skills-category">
-            <h3 class="category-title">TOOLS & TECHNOLOGIES</h3>
-            <div class="skills-grid">
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- Git SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21.6 11.4L12.6 2.4C12.2 2 11.6 2 11.2 2.4L9.8 3.8L12.1 6.1C12.7 5.9 13.4 6.1 13.8 6.5C14.3 7 14.4 7.7 14.2 8.3L16.5 10.6C17.1 10.4 17.8 10.5 18.2 11C18.7 11.5 18.7 12.3 18.2 12.8C17.7 13.3 16.9 13.3 16.4 12.8C16 12.4 15.9 11.8 16.1 11.2L13.8 8.9V15C14 15.2 14.2 15.5 14.2 15.8C14.2 16.5 13.6 17.1 12.9 17.1C12.2 17.1 11.6 16.5 11.6 15.8C11.6 15.4 11.8 15.1 12.1 14.9V8.9L9.8 6.6C9.2 6.8 8.5 6.7 8.1 6.3C7.6 5.8 7.5 5 7.7 4.4L3.8 8.3C3.4 8.7 3.4 9.3 3.8 9.7L12.8 18.7C13.2 19.1 13.8 19.1 14.2 18.7L21.6 11.3C22 10.9 22 10.3 21.6 9.9V11.4Z" fill="#F05032"/>
-                  </svg>
-                </div>
-                <span class="skill-name">Git</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- GitHub SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.477 2 2 6.477 2 12C2 16.42 4.867 20.17 8.83 21.5C9.33 21.58 9.5 21.27 9.5 21V19.31C6.73 19.91 6.14 17.98 6.14 17.98C5.69 16.84 5.03 16.54 5.03 16.54C4.13 15.92 5.1 15.93 5.1 15.93C6.1 16 6.62 16.96 6.62 16.96C7.5 18.47 8.94 18.03 9.5 17.78C9.59 17.14 9.85 16.71 10.13 16.46C7.91 16.21 5.58 15.35 5.58 11.52C5.58 10.43 5.97 9.54 6.61 8.84C6.51 8.59 6.17 7.57 6.71 6.19C6.71 6.19 7.55 5.92 9.46 7.21C10.26 6.99 11.12 6.88 11.98 6.88C12.84 6.88 13.7 6.99 14.5 7.21C16.41 5.92 17.25 6.19 17.25 6.19C17.79 7.57 17.45 8.59 17.35 8.84C17.99 9.54 18.38 10.43 18.38 11.52C18.38 15.36 16.04 16.21 13.81 16.46C14.17 16.77 14.49 17.39 14.49 18.35V21C14.49 21.27 14.66 21.59 15.17 21.5C19.14 20.16 22 16.42 22 12C22 6.477 17.522 2 12 2Z" fill="#FFFFFF"/>
-                  </svg>
-                </div>
-                <span class="skill-name">GitHub</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- VS Code SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23.9 6.5L18.4 1.1C18.2 0.9 17.8 0.9 17.6 1.1L9.1 8.6L4.3 5L0.8 6.7C0.3 6.9 0 7.4 0 8V16C0 16.6 0.3 17.1 0.8 17.3L4.3 19L9.1 15.4L17.6 22.9C17.8 23.1 18.2 23.1 18.4 22.9L23.9 17.5C24.1 17.3 24.1 16.9 23.9 16.7L18.7 12L23.9 7.3C24.1 7.1 24.1 6.7 23.9 6.5ZM17.4 16.7L12.5 12L17.4 7.3V16.7Z" fill="#007ACC"/>
-                  </svg>
-                </div>
-                <span class="skill-name">VS Code</span>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <!-- OpenAI / ChatGPT SVG -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21.7 10.7C22.1 10.2 22.1 9.4 21.6 9C20.6 8.3 19.3 8.3 18.3 9C18 7.3 17.1 5.9 15.7 5C14.3 4.1 12.6 4.1 11.2 5C10.7 3.5 9.4 2.5 7.8 2.5C5.9 2.5 4.3 4.1 4.3 6V6.5C3.1 6.8 2 7.7 1.5 9C0.9 10.3 1.1 11.8 2 12.8C1.6 13.3 1.6 14.1 2.1 14.5C3.1 15.2 4.4 15.2 5.4 14.5C5.7 16.2 6.6 17.6 8 18.5C9.4 19.4 11.1 19.4 12.5 18.5C13 20 14.3 21 15.9 21C17.8 21 19.4 19.4 19.4 17.5V17C20.6 16.7 21.7 15.8 22.2 14.5C22.8 13.2 22.6 11.7 21.7 10.7ZM15.9 19.5C14.8 19.5 13.9 18.8 13.5 17.8C13.8 17.6 14.1 17.3 14.3 17L16.5 15.7C17.2 15.3 17.6 14.6 17.6 13.8V10.8L19.4 9.8C20.1 10.5 20.2 11.6 19.8 12.5L19.4 13.2C19.2 13.5 19.2 14 19.4 14.3C19.9 15.1 19.9 16 19.4 16.7L18.1 17.4C17.6 18.8 16.7 19.5 15.9 19.5ZM4.6 6C4.6 5.2 5.2 4.6 6 4.6C6.7 4.6 7.4 5 7.7 5.7C7.4 5.9 7.1 6.2 6.9 6.5L4.7 7.8C4 8.2 3.6 8.9 3.6 9.7V12.7L2.1 11.8C1.5 11.1 1.4 10 1.8 9.1L2.2 8.4C2.4 8.1 2.4 7.6 2.2 7.3C1.7 6.5 1.7 5.6 2.2 4.9L3.5 4.2C4.1 5.3 4.6 6 4.6 6ZM7.2 16.2C6.5 15.8 6.1 15.1 6.1 14.3V11.3L4.3 10.3C3.6 9.6 3.5 8.5 3.9 7.6L4.3 6.9C4.5 6.6 4.5 6.1 4.3 5.8C3.8 5 3.8 4.1 4.3 3.4L5.6 2.7C6.1 4.1 7.2 16.2 7.2 16.2ZM12 12.8L9.8 14.1V11.5L12 10.2V12.8ZM16.3 12.5L12 15L9.8 13.7V8.7L14.1 6.2L16.3 7.5V12.5Z" fill="#10A37F"/>
-                  </svg>
-                </div>
-                <span class="skill-name">AI Tools</span>
-              </div>
-            </div>
-          </div>
+    <!-- My Process Section -->
+    <section id="process" class="process-section">
+      <div class="process-container">
+        <header class="process-intro">
+          <p class="editorial-label process-reveal">Process · 04</p>
+          <h2 class="process-heading process-reveal">My Process</h2>
+          <p class="process-lead process-reveal">Every product begins with curiosity. My process is built around understanding the problem first, designing with intention, and delivering solutions that feel both functional and refined.</p>
+        </header>
+
+        <div class="process-timeline process-reveal">
+          <div class="process-line" aria-hidden="true"><span></span></div>
+          <ol class="process-stages">
+            <li class="process-stage" tabindex="0">
+              <span class="process-node">01</span>
+              <h3>Discover</h3>
+              <p>Understand the problem, users, and business goals before proposing solutions.</p>
+            </li>
+            <li class="process-stage" tabindex="0">
+              <span class="process-node">02</span>
+              <h3>Define</h3>
+              <p>Identify opportunities, clarify priorities, and establish a clear direction.</p>
+            </li>
+            <li class="process-stage" tabindex="0">
+              <span class="process-node">03</span>
+              <h3>Design</h3>
+              <p>Create intuitive user experiences through thoughtful interfaces, interaction design, and visual systems.</p>
+            </li>
+            <li class="process-stage" tabindex="0">
+              <span class="process-node">04</span>
+              <h3>Build</h3>
+              <p>Develop reliable, responsive products using modern technologies and AI-assisted workflows.</p>
+            </li>
+            <li class="process-stage" tabindex="0">
+              <span class="process-node">05</span>
+              <h3>Refine</h3>
+              <p>Test, iterate, improve, and polish until every detail feels intentional.</p>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <!-- Let's Connect / Footer Section -->
-    <section id="contact" class="contact-section scroll-reveal">
-      <div class="section-container contact-wrapper">
-        <div class="contact-left">
-          <h2 class="contact-heading">LET'S CONNECT</h2>
-          <p class="contact-text">I'm always open to discussing new opportunities, interesting projects, or ways to collaborate.</p>
-          
-          <ul class="contact-links-list">
-            <li>
-              <a href="mailto:ethan.nanev@example.com" class="contact-link-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                <span>ethan.nanev@example.com</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://linkedin.com/in/ethannanev" target="_blank" rel="noopener noreferrer" class="contact-link-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                  <rect x="2" y="9" width="4" height="12"></rect>
-                  <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-                <span>linkedin.com/in/ethannanev</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/ethannanev" target="_blank" rel="noopener noreferrer" class="contact-link-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-                <span>github.com/ethannanev</span>
-              </a>
-            </li>
+    <!-- Capabilities Section -->
+    <section id="skills" class="skills-section">
+      <div class="capabilities-container">
+        <header class="capabilities-intro">
+          <p class="editorial-label capability-reveal">Capabilities · 05</p>
+          <h2 class="capabilities-heading capability-reveal">Capabilities</h2>
+          <p class="capabilities-lead capability-reveal">I believe great products emerge from the combination of thoughtful strategy, elegant design, and reliable engineering. These are the capabilities I continue to develop and refine.</p>
+        </header>
+
+        <div class="capabilities-grid">
+          <article class="capability-card capability-reveal" tabindex="0">
+            <span class="capability-number" aria-hidden="true">01</span>
+            <h3>AI &amp; Product Strategy</h3>
+            <p>Understanding business problems and identifying practical AI solutions that improve user experiences and operational efficiency.</p>
+            <ul class="technology-list" aria-label="AI and product strategy technologies">
+              <li>OpenAI</li><li>Prompt Engineering</li><li>AI Workflows</li><li>Product Strategy</li>
+            </ul>
+          </article>
+
+          <article class="capability-card capability-reveal" tabindex="0">
+            <span class="capability-number" aria-hidden="true">02</span>
+            <h3>Front-End Development</h3>
+            <p>Building responsive, accessible, and modern interfaces with attention to usability and performance.</p>
+            <ul class="technology-list" aria-label="Front-end technologies">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li>
+            </ul>
+          </article>
+
+          <article class="capability-card capability-reveal" tabindex="0">
+            <span class="capability-number" aria-hidden="true">03</span>
+            <h3>Design &amp; Experience</h3>
+            <p>Designing interfaces that balance clarity, aesthetics, motion, and usability.</p>
+            <ul class="technology-list" aria-label="Design capabilities">
+              <li>Figma</li><li>UX Research</li><li>UI Design</li><li>Prototyping</li><li>Motion Design</li>
+            </ul>
+          </article>
+
+          <article class="capability-card capability-reveal" tabindex="0">
+            <span class="capability-number" aria-hidden="true">04</span>
+            <h3>Collaboration &amp; Workflow</h3>
+            <p>Working efficiently through structured development practices and continuous learning.</p>
+            <ul class="technology-list" aria-label="Collaboration tools and practices">
+              <li>Git</li><li>GitHub</li><li>VS Code</li><li>Codex</li><li>Agile</li><li>Documentation</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing Scene -->
+    <section id="contact" class="contact-section">
+      <div class="closing-container">
+        <header class="closing-intro">
+          <p class="editorial-label closing-reveal">Contact · Final Frame</p>
+          <h2 class="contact-heading closing-reveal">Let's Build Together</h2>
+          <p class="contact-text closing-reveal">Whether you're building a product, exploring an AI opportunity, or looking for a thoughtful collaborator, I'd love to hear about your ideas. Great work begins with a conversation.</p>
+          <a href="mailto:ethannanev@gmail.com?subject=Let's%20build%20together" class="conversation-button closing-reveal">Start the Conversation <span aria-hidden="true">↗</span></a>
+        </header>
+
+        <nav class="contact-links closing-reveal" aria-label="Contact links">
+          <a href="mailto:ethannanev@gmail.com"><span>Email</span><span>ethannanev@gmail.com</span></a>
+          <a href="https://linkedin.com/in/ethannanev" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span>Connect professionally ↗</span></a>
+          <a href="https://github.com/ethannanev" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span>Explore my code ↗</span></a>
+        </nav>
+
+        <aside class="availability-card closing-reveal" aria-label="Current availability">
+          <div class="availability-heading"><span class="availability-dot" aria-hidden="true"></span><h3>Currently</h3></div>
+          <p>Open to opportunities in:</p>
+          <ul>
+            <li>AI Product Development</li>
+            <li>Front-End Engineering</li>
+            <li>UX / Product Design</li>
+            <li>Creative Technology</li>
           </ul>
-        </div>
-        
-        <div class="contact-right">
-          <div class="profile-image-container">
-            <img src="images/profile-piano.jpg" alt="Dr. Ethan Nanev playing grand piano in a suit" class="profile-image" loading="lazy">
-          </div>
-        </div>
+        </aside>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-container">
-      <p>&copy; 2026 Ethan Nanev. All rights reserved.</p>
+      <p>Designed and built by Ethan Nanev.</p>
     </div>
   </footer>
 
