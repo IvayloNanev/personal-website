@@ -38,7 +38,7 @@ function initHeaderScroll() {
 function initMobileMenu() {
   const navToggle = document.querySelector('.mobile-nav-toggle');
   const navMenu = document.getElementById('primary-navigation');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = navMenu.querySelectorAll('a');
   
   if (!navToggle || !navMenu) return;
   
@@ -55,11 +55,20 @@ function initMobileMenu() {
   
   const closeMenu = () => {
     navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation menu');
     navMenu.classList.remove('open');
     document.body.style.overflow = '';
   };
   
-  navToggle.addEventListener('click', toggleMenu);
+  navToggle.addEventListener('click', () => {
+    toggleMenu();
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeMenu();
+  });
   
   // Close menu when clicking a nav link
   navLinks.forEach(link => {
