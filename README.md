@@ -1,4 +1,4 @@
-# Hi, I'm Dr. Ethan Nanev 👋
+# Hi, I'm Dr. Ivaylo Nanev 👋
 
 I'm an aspiring **Software Engineer** with a background in **classical music, research, and education**. After earning a Doctor of Musical Arts in Piano Performance and Pedagogy, I transitioned into software engineering to apply the same analytical thinking, discipline, and problem-solving skills that shaped my career as a musician.
 

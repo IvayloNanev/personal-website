@@ -1,5 +1,5 @@
 /**
- * Dr. Ethan Nanev - Portfolio Script
+ * Dr. Ivaylo Nanev - Portfolio Script
  * Handles navigation header styling, mobile navigation, scroll reveals,
  * active link highlighting, and accessibility.
  */
