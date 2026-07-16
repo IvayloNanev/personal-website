@@ -445,9 +445,9 @@ main,
 .hero-kicker {
   margin-bottom: clamp(34px, 5vh, 58px);
   font-family: var(--font-interface);
-  font-size: 0.72rem;
+  font-size: 1.44rem;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: hsla(var(--text-primary), 0.74);
 }
