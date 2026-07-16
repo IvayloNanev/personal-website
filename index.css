@@ -312,7 +312,7 @@ a {
 
 .nav-link {
   display: grid;
-  grid-template-columns: 25px 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
   min-height: 40px;
   font-family: var(--font-interface);
@@ -324,17 +324,12 @@ a {
   padding: 5px 0;
 }
 
-.nav-link::before { content: attr(data-index); font-size: 0.624rem; letter-spacing: 0.08em; color: hsla(var(--text-primary), 0.22); transition: color 0.8s ease; }
+.nav-link::before { content: none; }
 
 .nav-link:hover {
   color: hsl(var(--text-primary));
 }
 
-.nav-link:hover::before,
-.nav-link:focus-visible::before {
-  color: hsl(var(--accent-gold-hover));
-  text-shadow: 0 0 12px hsla(var(--accent-gold), 0.3);
-}
 
 .nav-link::after {
   content: '';
@@ -359,7 +354,6 @@ a {
   text-shadow: 0 0 18px hsla(var(--accent-gold-hover), 0.22);
 }
 
-.nav-link.active::before { color: hsl(var(--accent-gold-hover)); text-shadow: 0 0 12px hsla(var(--accent-gold), 0.46); }
 .nav-link.active::after { width: 1px; height: 55%; box-shadow: 0 0 14px 2px hsla(var(--accent-gold), 0.42); }
 
 .sidebar-progress { position: absolute; top: 0; right: -1px; width: 1px; height: 100%; background: transparent; overflow: hidden; }
@@ -1824,10 +1818,6 @@ main,
   letter-spacing: 0.068em;
 }
 
-.nav-link.active::before {
-  color: var(--brass-mid);
-  text-shadow: 0 1px 0 rgba(255, 235, 202, 0.07), 0 5px 14px rgba(169, 120, 70, 0.1);
-}
 
 .process-stage:hover .process-node,
 .process-stage:focus-visible .process-node,
