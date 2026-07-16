@@ -1243,12 +1243,19 @@ main,
 
 .process-line {
   position: absolute;
+  opacity: 0;
+  transition: opacity 0.35s ease;
   top: 31px;
   left: 10%;
   right: 10%;
   height: 1px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.09);
+}
+
+.process-timeline:hover .process-line,
+.process-timeline:focus-within .process-line {
+  opacity: 1;
 }
 
 .process-line span {
@@ -1324,6 +1331,7 @@ main,
   box-shadow: 0 16px 42px rgba(0, 0, 0, 0.42), 0 0 24px hsla(var(--accent-gold), 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
+.process-stage.is-preview p,
 .process-stage:hover p,
 .process-stage:focus-visible p,
 .process-stage.is-active p {

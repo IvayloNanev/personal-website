@@ -398,41 +398,31 @@ function initSectionCardExits() {
 function initProcessTimeline() {
   const timeline = document.querySelector('.process-timeline');
   const stages = Array.from(document.querySelectorAll('.process-stage'));
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!timeline || !stages.length) return;
 
-  if (reduceMotion) {
-    timeline.style.setProperty('--process-progress', '1');
-    stages.forEach(stage => stage.classList.add('is-active'));
-    return;
-  }
-
-  let frameRequested = false;
-
-  const updateTimeline = () => {
-    const rect = timeline.getBoundingClientRect();
-    const start = window.innerHeight * 0.84;
-    const end = window.innerHeight * 0.3;
-    const progress = Math.min(Math.max((start - rect.top) / (start - end), 0), 1);
-    const activeIndex = Math.min(Math.floor(progress * stages.length), stages.length - 1);
-
+  const showProgressFor = index => {
+    stages[0].classList.remove('is-preview');
+    const progress = stages.length > 1 ? index / (stages.length - 1) : 1;
     timeline.style.setProperty('--process-progress', progress.toFixed(3));
-    stages.forEach((stage, index) => {
-      stage.classList.toggle('is-active', progress > 0 && index === activeIndex);
-    });
-
-    frameRequested = false;
   };
 
-  const requestUpdate = () => {
-    if (frameRequested) return;
-    frameRequested = true;
-    window.requestAnimationFrame(updateTimeline);
+  const resetProgress = () => {
+    timeline.style.setProperty('--process-progress', '0');
+    stages[0].classList.add('is-preview');
   };
 
-  updateTimeline();
-  registerViewportUpdate(updateTimeline);
+  stages.forEach((stage, index) => {
+    stage.addEventListener('pointerenter', () => showProgressFor(index));
+    stage.addEventListener('focus', () => showProgressFor(index));
+  });
+
+  timeline.addEventListener('pointerleave', resetProgress);
+  timeline.addEventListener('focusout', event => {
+    if (!timeline.contains(event.relatedTarget) && !timeline.matches(':hover')) resetProgress();
+  });
+
+  resetProgress();
 }
 
 /**
