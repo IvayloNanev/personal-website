@@ -449,7 +449,8 @@ function initSelectedWork() {
 
   if (!carousel || !track || !realSlides.length) return;
 
-  realSlides.forEach(slide => {
+  realSlides.forEach((slide, index) => {
+    slide.dataset.projectIndex = String(index);
     const image = slide.querySelector('img');
     image?.classList.add('is-decoding');
   });
@@ -493,6 +494,7 @@ function initSelectedWork() {
   let dragStartPosition = 0;
   let lastPointerX = 0;
   let dragDistance = 0;
+  let activePointerId = null;
 
   slides.forEach(slide => {
     bindPointerSpotlight(slide, '--slide-x', '--slide-y');
@@ -508,9 +510,8 @@ function initSelectedWork() {
   };
 
   const realIndexFor = physicalIndex => {
-    if (physicalIndex === 0) return realSlides.length - 1;
-    if (physicalIndex === slides.length - 1) return 0;
-    return physicalIndex - 1;
+    const projectIndex = Number(slides[physicalIndex]?.dataset.projectIndex);
+    return Number.isInteger(projectIndex) ? projectIndex : 0;
   };
 
   const updateSlideState = physicalIndex => {
@@ -565,7 +566,6 @@ function initSelectedWork() {
 
   const beginSnap = (index = nearestSlideIndex()) => {
     activePhysicalIndex = Math.min(Math.max(index, 0), slides.length - 1);
-    updateSlideState(activePhysicalIndex);
     snapTarget = positionFor(activePhysicalIndex);
 
     if (reduceMotion) {
@@ -587,6 +587,9 @@ function initSelectedWork() {
       const distance = snapTarget - currentX;
       velocity = velocity * 0.7 + distance * 0.11;
       currentX += velocity;
+
+      const visuallyCenteredIndex = nearestSlideIndex();
+      if (visuallyCenteredIndex !== activePhysicalIndex) updateSlideState(visuallyCenteredIndex);
 
       if (Math.abs(distance) < 0.5 && Math.abs(velocity) < 0.2) {
         currentX = snapTarget;
@@ -648,6 +651,10 @@ function initSelectedWork() {
     lastPointerX = event.clientX;
     dragDistance = 0;
     track.classList.add('is-dragging');
+    activePointerId = event.pointerId;
+    if (track.setPointerCapture) {
+      try { track.setPointerCapture(activePointerId); } catch (error) { activePointerId = event.pointerId; }
+    }
     markInteraction();
   });
 
@@ -663,10 +670,15 @@ function initSelectedWork() {
     render();
   });
 
-  const finishDrag = () => {
+  const finishDrag = event => {
     if (!isDragging) return;
     isDragging = false;
     track.classList.remove('is-dragging');
+    const pointerId = event?.pointerId ?? activePointerId;
+    if (pointerId !== null && track.hasPointerCapture?.(pointerId)) {
+      try { track.releasePointerCapture(pointerId); } catch (error) { /* Capture already released. */ }
+    }
+    activePointerId = null;
     if (reduceMotion) {
       beginSnap();
       return;
@@ -677,8 +689,12 @@ function initSelectedWork() {
 
   track.addEventListener('pointerup', finishDrag);
   track.addEventListener('pointercancel', finishDrag);
-  carousel.addEventListener('pointerleave', () => {
-    if (isDragging) finishDrag();
+  track.addEventListener('lostpointercapture', event => {
+    if (isDragging) finishDrag(event);
+  });
+  carousel.addEventListener('pointerleave', event => {
+    if (isDragging && activePointerId !== null && track.hasPointerCapture?.(activePointerId)) return;
+    if (isDragging) finishDrag(event);
 
     if (animationFrame !== null) {
       window.cancelAnimationFrame(animationFrame);
@@ -691,7 +707,19 @@ function initSelectedWork() {
     if (!reduceMotion) startAnimation();
   });
   track.addEventListener('click', event => {
-    if (Math.abs(dragDistance) > 8) event.preventDefault();
+    if (Math.abs(dragDistance) > 8) {
+      event.preventDefault();
+      return;
+    }
+
+    const selectedSlide = event.target.closest('.work-slide');
+    const selectedIndex = slides.indexOf(selectedSlide);
+    if (selectedIndex >= 0 && selectedIndex !== activePhysicalIndex) {
+      event.preventDefault();
+      markInteraction();
+      beginSnap(selectedIndex);
+      if (!reduceMotion) startAnimation();
+    }
   }, true);
 
   carousel.addEventListener('wheel', event => {
