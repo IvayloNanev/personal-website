@@ -330,6 +330,12 @@ a {
   color: hsl(var(--text-primary));
 }
 
+.nav-link:hover::before,
+.nav-link:focus-visible::before {
+  color: hsl(var(--accent-gold-hover));
+  text-shadow: 0 0 12px hsla(var(--accent-gold), 0.3);
+}
+
 .nav-link::after {
   content: '';
   display: none;
