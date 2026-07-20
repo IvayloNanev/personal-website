@@ -51,12 +51,12 @@ const builder = [
 ];
 
 const bring = [
-  ["Strategic Thinking", "Understanding problems before building solutions."],
-  ["AI-Native Development", "Accelerating research, design, prototyping, and development."],
-  ["Human-Centered Design", "Creating intuitive, accessible, emotionally engaging interfaces."],
-  ["Engineering Excellence", "Building reliable, scalable, maintainable digital products."],
-  ["Clear Communication", "Bridging technical ideas and business goals."],
-  ["Continuous Learning", "Adapting quickly and constantly refining the craft."],
+  ["Strategic Thinking", "Translate business objectives, user evidence, and market constraints into clear product priorities, measurable outcomes, and an actionable roadmap."],
+  ["AI-Native Development", "Identify high-value AI opportunities, assess feasibility and risk, and integrate automation or decision support where it creates meaningful operational value."],
+  ["Human-Centered Design", "Ground product decisions in user needs, behavior, accessibility, and context—reducing friction while strengthening adoption, confidence, and trust."],
+  ["Engineering Excellence", "Select maintainable technical foundations that balance delivery speed with reliability, performance, security, scalability, and long-term ownership."],
+  ["Clear Communication", "Align business, design, and engineering through concise artifacts, visible trade-offs, documented decisions, and a shared definition of success."],
+  ["Continuous Learning", "Validate assumptions, evaluate product signals, and adapt priorities as new evidence emerges—turning delivery into an ongoing cycle of improvement."],
 ];
 
 const process = [
@@ -139,7 +139,7 @@ function ProjectedChapter({ chapter }: { chapter: ReelKey }) {
   if (chapter === "bring") return (
     <div className="chapter text-chapter">
       <ChapterLabel number="03">Capability</ChapterLabel>
-      <header className="chapter-intro compact"><h2>What I Bring</h2><p>Strategic thinking, design sensitivity, and engineering discipline—combined to create products that are intuitive, impactful, and built to last.</p></header>
+      <header className="chapter-intro compact"><h2>What I Bring</h2><p>A cross-functional perspective that connects business strategy, user experience, AI opportunity, and technical execution—turning complex product decisions into focused, measurable progress.</p></header>
       <div className="six-grid">{bring.map(([title, copy], i) => <article key={title}><span>0{i + 1}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
     </div>
   );
