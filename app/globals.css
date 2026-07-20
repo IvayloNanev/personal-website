@@ -226,4 +226,16 @@ button:focus-visible, a:focus-visible { outline: 1px solid var(--brass-light); o
   .bottombar { grid-template-columns: 1fr auto; }.bottombar p:nth-child(2) { display: none; }
 }
 
+/* Desktop counterpart to the sidebar reel motion triggered by touch on mobile. */
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+  .reel-control:hover .reel-object {
+    animation: wheelSpin .68s cubic-bezier(.22,.75,.25,1);
+  }
+
+  .reel-control:hover .machine-sketch {
+    animation: machineTurn .68s cubic-bezier(.22,.75,.25,1);
+    transform-origin: 50% 50%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
