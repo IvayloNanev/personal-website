@@ -96,35 +96,29 @@ function ChapterLabel({ number, children }: { number: string; children: React.Re
   return <p className="chapter-label"><span>{number}</span>{children}</p>;
 }
 
-function ProjectScene({ scene, setScene }: { scene: number; setScene: (index: number) => void }) {
-  const project = projects[scene];
+function ProjectScene() {
   return (
-    <div className="project-scene">
-      <div className="project-image-wrap">
-        <img src={project.image} alt={project.alt} />
-        <span className="image-burn" aria-hidden="true" />
+    <div className="project-grid">
+      {projects.map((project, index) => (
+        <article className="project-card" key={project.title}>
+          <div className="project-image-wrap">
+            <img src={project.image} alt={project.alt} />
+            <span className="image-burn" aria-hidden="true" />
+            <span className="project-number">0{index + 1}</span>
+          </div>
+          <div className="project-copy">
+            <p className="eyebrow">{project.category}</p>
+            <h2>{project.title}</h2>
+            <p className="project-description">{project.description}</p>
+            <p className="project-tools">{project.technologies}</p>
+          </div>
+        </article>
+      ))}
       </div>
-      <div className="project-copy">
-        <p className="eyebrow">{project.category}</p>
-        <h2>{project.title}</h2>
-        <p className="project-description">{project.description}</p>
-        <dl>
-          <div><dt>Technologies & Skills</dt><dd>{project.technologies}</dd></div>
-          <div><dt>My Contributions</dt><dd>{project.contribution}</dd></div>
-        </dl>
-      </div>
-      <div className="scene-controls" aria-label="Project scenes">
-        {projects.map((item, index) => (
-          <button key={item.title} onClick={() => setScene(index)} className={scene === index ? "is-active" : ""} aria-label={`Show ${item.title}`} aria-pressed={scene === index}>
-            <span>0{index + 1}</span>
-          </button>
-        ))}
-      </div>
-    </div>
   );
 }
 
-function ProjectedChapter({ chapter, scene, setScene }: { chapter: ReelKey; scene: number; setScene: (index: number) => void }) {
+function ProjectedChapter({ chapter }: { chapter: ReelKey }) {
   if (chapter === "opening") return (
     <div className="chapter opening-chapter">
       <ChapterLabel number="01">About · 2026</ChapterLabel>
@@ -152,8 +146,8 @@ function ProjectedChapter({ chapter, scene, setScene }: { chapter: ReelKey; scen
 
   if (chapter === "work") return (
     <div className="chapter work-chapter">
-      <ChapterLabel number="06">Selected Work · Scene 0{scene + 1}</ChapterLabel>
-      <ProjectScene scene={scene} setScene={setScene} />
+      <ChapterLabel number="06">Selected Work · Three Studies</ChapterLabel>
+      <ProjectScene />
     </div>
   );
 
@@ -190,7 +184,6 @@ function ProjectedChapter({ chapter, scene, setScene }: { chapter: ReelKey; scen
 export default function Home() {
   const [active, setActive] = useState(0);
   const [movingReel, setMovingReel] = useState<number | null>(null);
-  const [scene, setScene] = useState(0);
   const [changing, setChanging] = useState(false);
   const [soundOn, setSoundOn] = useState(false);
   const audioRef = useRef<AudioContext | null>(null);
@@ -199,7 +192,7 @@ export default function Home() {
     if (index === active || changing) return;
     setChanging(true);
     setMovingReel(index);
-    window.setTimeout(() => { setActive(index); setScene(0); }, 230);
+    window.setTimeout(() => setActive(index), 230);
     window.setTimeout(() => {
       setChanging(false);
       setMovingReel(null);
@@ -263,7 +256,7 @@ export default function Home() {
               <i className="construction-axis axis-x" />
               <i className="construction-axis axis-y" />
             </div>
-            <ProjectedChapter chapter={reels[active].key} scene={scene} setScene={setScene} />
+            <ProjectedChapter chapter={reels[active].key} />
             <span className="frame-counter">FOLIO {reels[active].number} · STUDY {String(active + 1).padStart(2, "0")}</span>
           </article>
           <div className="film-edge bottom-edge" aria-hidden="true">{Array.from({ length: 9 }).map((_, i) => <i key={i} />)}</div>
