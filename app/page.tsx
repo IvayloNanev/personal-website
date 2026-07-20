@@ -60,11 +60,11 @@ const bring = [
 ];
 
 const process = [
-  ["Discover", "Understand the problem, users, and business goals."],
-  ["Define", "Clarify priorities and establish a clear direction."],
-  ["Design", "Shape thoughtful interfaces and interaction systems."],
-  ["Build", "Develop reliable products with modern, AI-assisted workflows."],
-  ["Refine", "Test, iterate, and polish until every detail feels intentional."],
+  ["Discover", "Establish the product context through stakeholder conversations, user research, workflow analysis, and available data—identifying the underlying problem and business objectives."],
+  ["Define", "Synthesize findings into a clear problem statement, user requirements, success measures, prioritized scope, technical considerations, and an actionable product direction."],
+  ["Design", "Translate requirements into information architecture, user journeys, interaction flows, wireframes, prototypes, content, and a coherent visual system for validation."],
+  ["Build", "Implement a responsive, accessible, and maintainable product using reusable components, appropriate AI and data integrations, and continuous quality assurance."],
+  ["Refine", "Evaluate usability, performance, and product feedback; resolve friction, strengthen clarity, document key decisions, and prepare for launch and continued iteration."],
 ];
 
 const capabilities = [
@@ -154,7 +154,7 @@ function ProjectedChapter({ chapter }: { chapter: ReelKey }) {
   if (chapter === "process") return (
     <div className="chapter text-chapter process-chapter">
       <ChapterLabel number="02">Process</ChapterLabel>
-      <header className="chapter-intro compact"><h2>My Process</h2><p>Understanding the problem first, designing with intention, and delivering solutions that feel both functional and refined.</p></header>
+      <header className="chapter-intro compact"><h2>My Process</h2><p>A structured, evidence-led approach that moves from product discovery and strategic definition through experience design, implementation, validation, and continuous improvement.</p></header>
       <ol className="process-strip">{process.map(([title, copy], i) => <li key={title}><span>0{i + 1}</span><h3>{title}</h3><p>{copy}</p></li>)}</ol>
     </div>
   );
