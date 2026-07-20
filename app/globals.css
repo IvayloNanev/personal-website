@@ -149,7 +149,7 @@ button:focus-visible, a:focus-visible { outline: 1px solid var(--brass-light); o
 .reel-hub { position: absolute; inset: 42%; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 4px #0d0d0c, 0 0 0 5px currentColor; }
 .reel-hole { position: absolute; width: 23%; aspect-ratio: 1; border-radius: 50%; border: 1px solid currentColor; background: var(--charcoal); }
 .hole-1 { left: 38.5%; top: 10%; }.hole-2 { right: 12%; top: 31%; }.hole-3 { right: 21%; bottom: 13%; }.hole-4 { left: 21%; bottom: 13%; }.hole-5 { left: 12%; top: 31%; }
-.reel-object.is-moving { opacity: 1; }
+.reel-object.is-moving { opacity: 1; animation: wheelSpin .78s cubic-bezier(.4,0,.2,1); }
 .machine-sketch { width: 82%; height: 82%; overflow: visible; fill: none; stroke: currentColor; stroke-width: 1.05; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 5px rgba(199,153,82,.22)); }
 .machine-sketch .construction { opacity: .25; stroke-dasharray: 2 3; }
 .reel-meta { position: absolute; top: 50%; display: grid; gap: 4px; width: max-content; transform: translateY(-50%); color: currentColor; font: 400 8px/1.2 var(--interface); letter-spacing: .08em; }
@@ -203,6 +203,11 @@ button:focus-visible, a:focus-visible { outline: 1px solid var(--brass-light); o
 @keyframes breathe { from { opacity: .7; } to { opacity: 1; transform: scale(1.02); } }
 @keyframes inkDraw { from { stroke-dashoffset: 280; opacity: .2; } to { stroke-dashoffset: 0; opacity: 1; } }
 @keyframes machineTurn { to { transform: rotate(360deg); } }
+@keyframes wheelSpin {
+  0% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 2px rgba(185,139,84,.08)); }
+  42% { transform: rotate(210deg) scale(1.055); filter: drop-shadow(0 0 12px rgba(200,160,106,.35)); }
+  100% { transform: rotate(360deg) scale(1); filter: drop-shadow(0 0 7px rgba(185,139,84,.16)); }
+}
 
 @media (max-width: 900px) {
   body { overflow: auto; }

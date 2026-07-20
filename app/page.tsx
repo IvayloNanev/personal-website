@@ -189,6 +189,7 @@ function ProjectedChapter({ chapter, scene, setScene }: { chapter: ReelKey; scen
 
 export default function Home() {
   const [active, setActive] = useState(0);
+  const [movingReel, setMovingReel] = useState<number | null>(null);
   const [scene, setScene] = useState(0);
   const [changing, setChanging] = useState(false);
   const [soundOn, setSoundOn] = useState(false);
@@ -197,8 +198,12 @@ export default function Home() {
   const loadReel = useCallback((index: number) => {
     if (index === active || changing) return;
     setChanging(true);
+    setMovingReel(index);
     window.setTimeout(() => { setActive(index); setScene(0); }, 230);
-    window.setTimeout(() => setChanging(false), 780);
+    window.setTimeout(() => {
+      setChanging(false);
+      setMovingReel(null);
+    }, 780);
   }, [active, changing]);
 
   useEffect(() => {
@@ -241,7 +246,7 @@ export default function Home() {
 
       <section className="projector-stage" id="top">
         <aside className="reel-shelf left-shelf" aria-label="Portfolio reels">
-          {reels.map((reel, index) => <button className={`reel-control ${active === index ? "is-active" : ""}`} key={reel.key} onClick={() => loadReel(index)} aria-pressed={active === index}><span className="reel-meta"><b>{reel.number}</b>{reel.label}</span><Reel active={active === index} moving={changing && active === index} index={index} /></button>)}
+          {reels.map((reel, index) => <button className={`reel-control ${active === index ? "is-active" : ""}`} key={reel.key} onClick={() => loadReel(index)} aria-pressed={active === index}><span className="reel-meta"><b>{reel.number}</b>{reel.label}</span><Reel active={active === index} moving={movingReel === index} index={index} /></button>)}
         </aside>
 
         <div className="projection-unit">
