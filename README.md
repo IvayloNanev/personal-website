@@ -1,57 +1,98 @@
-# Hi, I'm Dr. Ivaylo Nanev 👋
+# vinext-starter
 
-I'm an aspiring **Software Engineer** with a background in **classical music, research, and education**. After earning a Doctor of Musical Arts in Piano Performance and Pedagogy, I transitioned into software engineering to apply the same analytical thinking, discipline, and problem-solving skills that shaped my career as a musician.
+A clean full-stack starter running on
+[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
+Drizzle support.
 
-I believe the skills developed through years of mastering complex musical works—pattern recognition, continuous improvement, and attention to detail—translate naturally to building thoughtful, user-centered software.
+## Prerequisites
 
----
+- Node.js `>=22.13.0`
 
-## 🚀 Currently
+## Quick Start
 
-- 💻 Learning Full-Stack Software Engineering through Pursuit
-- 🤖 Exploring AI-assisted software development
-- 🌱 Building projects with HTML, CSS, JavaScript, and Python
-- 📚 Continuously expanding my technical skills
+```bash
+npm install
+npm run dev
+npm run build
+```
 
----
+This starter does not use `wrangler.jsonc`.
 
-## 🛠️ Technologies
+## Included Shape
 
-- HTML5
-- CSS3
-- JavaScript
-- Python
-- Git
-- GitHub
-- VS Code
+- edit site code under `app/`
+- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
+- `vite.config.ts` simulates declared bindings for local development
+- `db/schema.ts` starts intentionally empty
+- `examples/d1/` contains an optional D1 example surface
+- `drizzle.config.ts` supports local migration generation when needed
 
----
+## Workspace Auth Headers
 
-## 📂 Featured Projects
+OpenAI workspace sites can read the current user's email from
+`oai-authenticated-user-email`.
 
-### AI Scheduling Assistant
-A scheduling application designed to help users organize meetings efficiently.
+SIWC-authenticated workspace sites may also receive
+`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
+`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
+`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
 
-### Personal Portfolio Website
-A responsive portfolio website showcasing my background, projects, and technical skills.
+Treat the full name as optional and fall back to email when it is absent:
 
-### Task Manager Application
-A CRUD task management application built with modern web technologies.
+```tsx
+import { headers } from "next/headers";
 
----
+export default async function Home() {
+  const requestHeaders = await headers();
+  const email = requestHeaders.get("oai-authenticated-user-email");
+  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
+  const fullName =
+    encodedFullName &&
+    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
+      "percent-encoded-utf-8"
+      ? decodeURIComponent(encodedFullName)
+      : null;
 
-## 🎯 What I Bring
+  const displayName = fullName ?? email;
+  // ...
+}
+```
 
-- Analytical thinking developed through years of advanced musical training
-- Systems-oriented problem solving and continuous improvement
-- Collaborative leadership and a passion for learning
-- A unique interdisciplinary perspective connecting music, research, and technology
+## Optional Dispatch-Owned ChatGPT Sign-In
 
----
+Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
+optional or required ChatGPT sign-in:
 
-## 📫 Connect With Me
+- Use `getChatGPTUser()` for optional signed-in UI.
+- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
+  anonymous visitors through Sign in with ChatGPT.
+- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
+  browser links or actions.
+- Pass a same-origin relative `returnTo` path for the destination after sign-in
+  or sign-out. The helper validates and safely encodes it.
+- Mark protected pages with `export const dynamic = "force-dynamic"` because
+  they depend on per-request identity headers.
 
-- GitHub: https://github.com/YOUR_USERNAME
-- LinkedIn: https://linkedin.com/in/YOUR_LINKEDIN
-- Portfolio: https://YOUR_PORTFOLIO_URL
-- Email: YOUR_EMAIL
+Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
+OAuth cookies, and identity header injection. Do not implement app routes for
+those reserved paths. Routes that do not import and call the helper remain
+anonymous-compatible.
+
+SIWC establishes identity only; it does not prove workspace membership. Use the
+Sites hosting platform's access policy controls for workspace-wide restrictions,
+or enforce explicit server-side membership or allowlist checks.
+
+Use SIWC for account pages, user-specific dashboards, saved records, and write
+actions tied to the current ChatGPT user. Leave public content anonymous.
+
+## Useful Commands
+
+- `npm run dev`: start local development
+- `npm run build`: verify the vinext build output
+- `npm test`: build the starter and verify its rendered loading skeleton
+- `npm run db:generate`: generate Drizzle migrations after schema changes
+
+## Learn More
+
+- [vinext Documentation](https://github.com/cloudflare/vinext)
+- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
