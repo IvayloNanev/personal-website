@@ -5,12 +5,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
 type ReelKey = "opening" | "builder" | "bring" | "work" | "process" | "capabilities" | "contact";
 
 const reels: { key: ReelKey; number: string; label: string }[] = [
-  { key: "opening", number: "01", label: "Opening" },
-  { key: "builder", number: "02", label: "The Builder" },
+  { key: "opening", number: "01", label: "About" },
+  { key: "process", number: "02", label: "My Process" },
   { key: "bring", number: "03", label: "What I Bring" },
-  { key: "work", number: "04", label: "Selected Work" },
-  { key: "process", number: "05", label: "My Process" },
-  { key: "capabilities", number: "06", label: "Capabilities" },
+  { key: "builder", number: "04", label: "The Builder" },
+  { key: "capabilities", number: "05", label: "Capabilities" },
+  { key: "work", number: "06", label: "Selected Work" },
   { key: "contact", number: "07", label: "Contact" },
 ];
 
@@ -127,7 +127,7 @@ function ProjectScene({ scene, setScene }: { scene: number; setScene: (index: nu
 function ProjectedChapter({ chapter, scene, setScene }: { chapter: ReelKey; scene: number; setScene: (index: number) => void }) {
   if (chapter === "opening") return (
     <div className="chapter opening-chapter">
-      <ChapterLabel number="01">Opening · 2026</ChapterLabel>
+      <ChapterLabel number="01">About · 2026</ChapterLabel>
       <p className="opening-name">Ivaylo Nanev</p>
       <h1><span>Every great product</span><span>starts with an idea.</span><em>I build the rest.</em></h1>
       <p className="opening-role">AI Product Designer<br />& Software Engineer</p>
@@ -136,7 +136,7 @@ function ProjectedChapter({ chapter, scene, setScene }: { chapter: ReelKey; scen
 
   if (chapter === "builder") return (
     <div className="chapter text-chapter">
-      <ChapterLabel number="02">Featured</ChapterLabel>
+      <ChapterLabel number="04">Featured</ChapterLabel>
       <header className="chapter-intro"><h2>The Builder</h2><p>I build digital products where artificial intelligence, design, and engineering work together. Every interaction is intentional and every product is designed to create an experience people remember.</p></header>
       <div className="three-grid">{builder.map(([title, copy], i) => <article key={title}><span>0{i + 1}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
     </div>
@@ -152,14 +152,14 @@ function ProjectedChapter({ chapter, scene, setScene }: { chapter: ReelKey; scen
 
   if (chapter === "work") return (
     <div className="chapter work-chapter">
-      <ChapterLabel number="04">Selected Work · Scene 0{scene + 1}</ChapterLabel>
+      <ChapterLabel number="06">Selected Work · Scene 0{scene + 1}</ChapterLabel>
       <ProjectScene scene={scene} setScene={setScene} />
     </div>
   );
 
   if (chapter === "process") return (
     <div className="chapter text-chapter process-chapter">
-      <ChapterLabel number="05">Process</ChapterLabel>
+      <ChapterLabel number="02">Process</ChapterLabel>
       <header className="chapter-intro compact"><h2>My Process</h2><p>Understanding the problem first, designing with intention, and delivering solutions that feel both functional and refined.</p></header>
       <ol className="process-strip">{process.map(([title, copy], i) => <li key={title}><span>0{i + 1}</span><h3>{title}</h3><p>{copy}</p></li>)}</ol>
     </div>
@@ -167,7 +167,7 @@ function ProjectedChapter({ chapter, scene, setScene }: { chapter: ReelKey; scen
 
   if (chapter === "capabilities") return (
     <div className="chapter text-chapter">
-      <ChapterLabel number="06">Capabilities</ChapterLabel>
+      <ChapterLabel number="05">Capabilities</ChapterLabel>
       <header className="chapter-intro compact"><h2>Capabilities</h2><p>Thoughtful strategy, elegant design, and reliable engineering—developed and refined as one connected practice.</p></header>
       <div className="capability-grid">{capabilities.map(([title, items], i) => <article key={title}><span>0{i + 1}</span><h3>{title}</h3><p>{items}</p></article>)}</div>
     </div>
