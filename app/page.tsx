@@ -45,9 +45,9 @@ const projects = [
 ];
 
 const builder = [
-  ["AI", "Building intelligent products that reduce friction, uncover possibilities, and solve real problems without losing human judgment."],
-  ["Design", "Crafting elegant interfaces where hierarchy, rhythm, motion, and feedback guide attention with purpose."],
-  ["Product", "Connecting strategy, design, and engineering to turn ambitious ideas into useful, resilient products."],
+  ["AI", "I approach AI as a product capability, not a decorative feature. I identify where intelligence can improve decisions, automate repetitive work, personalize experiences, or reveal useful patterns—then design the safeguards, feedback, and human oversight required for responsible use."],
+  ["Design", "I translate complex requirements into clear journeys, intuitive interactions, and coherent visual systems. Research, information architecture, prototyping, accessibility, content, motion, and feedback work together so the experience feels considered at every point."],
+  ["Product", "I connect customer needs, business objectives, and technical realities throughout delivery. By defining priorities, making trade-offs visible, building reusable foundations, and validating outcomes, I turn promising concepts into focused products that can evolve with confidence."],
 ];
 
 const bring = [
@@ -131,7 +131,7 @@ function ProjectedChapter({ chapter }: { chapter: ReelKey }) {
   if (chapter === "builder") return (
     <div className="chapter text-chapter">
       <ChapterLabel number="04">Featured</ChapterLabel>
-      <header className="chapter-intro"><h2>The Builder</h2><p>I build digital products where artificial intelligence, design, and engineering work together. Every interaction is intentional and every product is designed to create an experience people remember.</p></header>
+      <header className="chapter-intro"><h2>The Builder</h2><p>I work across product strategy, experience design, and software engineering to carry ideas from early ambiguity to working systems. This multidisciplinary perspective keeps business intent, user value, and implementation quality connected throughout the product lifecycle.</p></header>
       <div className="three-grid">{builder.map(([title, copy], i) => <article key={title}><span>0{i + 1}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
     </div>
   );
